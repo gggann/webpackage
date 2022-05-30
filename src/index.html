@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title> 검수수수수수 </title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="crossorigin="anonymous"></script> -->
+      <!-- <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+      <script src="./jquery.min.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script> -->
+    <!-- <script src="./boostrap.js"
+  integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+</script> -->
+    <!-- <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script> -->
+    <link type="text/css" rel="styleSheet" href="./boostrap.css" />
+    <!-- <script src="./boostrap.js"></script> -->
+    <script src="./vue.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"> -->
+    <link type="text/css" rel="styleSheet" href="./1.css" />
+    <script src="./axios.min.js"></script>
+    
+    <!-- <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script> -->
+    <script type="text/javascript">
+    window.onload = function () {
+      document.querySelector("#특가").click();
+      setTimeout(() => {
+        document.querySelector("#텍스트 > a").click() //最后一个商品
+      }, 15000);
+      //  document.querySelector("#기획").click();
+      // document.querySelector("#추천").click();
+    }
+  </script>
+    <!-- <script type="text/x-template" id="modal-template">
+          <transition name="modal">
+            <div class="modal-mask">
+              <div class="modal-wrapper">
+                <div class="modal-container">
+        
+                
+        
+                  <div class="modal-body">
+                    <slot name="body">
+                      default body
+                    </slot>
+                  </div>
+        
+                  <div class="modal-footer">
+                    <slot name="footer">
+                      default footer
+                      <button class="modal-default-button" @click="$emit('close')">
+                        OK
+                      </button>
+                    </slot>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </script> -->
+    <style>
+  </style>
+  </head>
+
+  <body>
+    <div id="topAnchor"></div>
+    <div id="app">
+      <div>
+
+        <div v-for="(vv,ii) in areaid">
+          <div v-for="(v,i) in checkradio">
+            <div>
+              <test></test>
+              <ann :message="vv" :checkboxmessage="v" :alljson="alljson" id="ann"></ann>
+              
+              <!-- <vnn :message="vv" :checkboxmessage="v" :alljson="alljson" id="vnn"></vnn> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <iframe src="https://front.wemakeprice.com/product/1768728072" ref="iframe"></iframe> -->
+      <!-- <div v-for="(v,i) in checkradio">
+        <div>
+          <ann :message="areaid" :checkboxmessage="v" :alljson="alljson"></ann>
+        </div>
+      </div> -->
+      <div id="텍스트" class="md-form" style="right:1%;width:10%;position:fixed">
+        <button @click="idlist" class="btn btn-default btn-xs">검</button>
+        <button @click="totaldelete" class="btn btn-default btn-xs">删除<span
+            style="color:red">{{deletecount}}</span></button>
+        <a href="#lastdeal" class="btn btn-default btn-xs">톱</a>
+        <textarea id="dealname" class="md-textarea form-control" rows="5"
+          @dblclick="복사ID()"></textarea>
+
+
+        <label for="dealname">
+        </label>
+        <div id="checkbox">
+          <!-- <div><input type="radio" v-model="checkradio" value="./일반/" />추천</div>
+            <div><input type="radio" v-model="checkradio" value="./특가/" />특가</div>
+            <div><input type="radio" v-model="checkradio" value="./기획/" />기획</div> -->
+          <div><input id="추천" type="checkbox" v-model="checkradio"
+              value="&period=monthly&price=&review=&searchDest=TAB_RANK&selectTab=rank&sort=weight&testScript=&testTarget=&ueKeywordInfo=Y">추천
+          </div>
+          <div><input id="특가" type="checkbox" v-model="checkradio"
+              value="&perPage=30&period=monthly&price=&review=&searchDest=TAB_SPECIAL&selectTab=special&sort=weight&testScript=&testTarget=&ueKeywordInfo=Y">특가
+          </div>
+          <div><input id="기획" type="checkbox" v-model="checkradio" 
+              value="가격비교">기획
+          </div>
+        </div>
+      </div>
+      <button onclick="show()" class="btn btn-default btn-xs" id="오엑스">O</button>
+      <script src="../dist/main.js"></script>
+    </body>
+
+  </html>

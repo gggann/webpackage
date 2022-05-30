@@ -1,0 +1,14 @@
+
+
+#dealname1,#dealname2 {
+    width: 6%;
+    float: left;
+    position:relative;
+    border: 1px solid #747474;
+    float: left;
+    background-color: rgb(183, 221, 255);
+}
+
+#keywordwidth{
+    display: table;
+}
